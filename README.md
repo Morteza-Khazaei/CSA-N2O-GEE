@@ -1,4 +1,5 @@
-# CSA N2O Project
+# Soil Moisture Estimation using Sentinel-1, WCM, and Machine Learning on the Google Earth Engine (CSA N2O Project)
+
 This repository contains the code and resources for the CSA N2O project, which focuses on estimating soil surface moisture using remote sensing data and machine learning techniques.
 ![SAR Inversion WCM Oh RFR USASK](figures/SAR_Inversion_WCM_Oh_RFR_USASK.png)
 
