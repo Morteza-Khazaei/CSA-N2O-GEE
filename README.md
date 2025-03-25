@@ -34,15 +34,15 @@ The project leverages the following key technologies:
 ## Getting Started
 
 To get started with the project, follow these steps:
-    ```bash
-    git clone https://github.com/your-username/CSA-N2O-Project.git
-    ```
+```bash
+git clone https://github.com/your-username/CSA-N2O-Project.git
+```
 2.  **Install Dependencies**: Install the required Python packages. A `requirements.txt` file will be provided to facilitate this:
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
 3.  **Set Up Google Earth Engine**: Ensure you have a Google Earth Engine account and have authenticated the Earth Engine Python API.
 4.  **Explore the Notebooks**: Navigate to the `colab_train_ensemble_models` directory and explore the Jupyter Notebooks to understand the data processing and modeling steps.
 5.  **Run the Scripts**: Execute the scripts in the `gee_scripts` directory to interact with Google Earth Engine and perform large-scale analyses.
 6.  **Data**: Download the necessary datasets and place them in the `data` directory.
-7. **Models**: Download the pre-trained models and place them in the `models` directory.
+7.  **Models**: Download the pre-trained models and place them in the `models` directory.
