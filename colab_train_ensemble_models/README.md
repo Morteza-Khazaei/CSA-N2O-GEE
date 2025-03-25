@@ -33,7 +33,7 @@ To run this notebook, ensure you have the following installed:
 Install dependencies using pip:
 ```bash
 pip install numpy pandas seaborn matplotlib scipy geemap earthengine-api
-
+```
 # Code Structure
 
 The notebook is organized into the following key components:
