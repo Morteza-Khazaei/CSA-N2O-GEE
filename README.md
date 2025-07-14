@@ -51,19 +51,19 @@ Trains and deploys Random Forest models:
 
 ### Installation
 
+### Install from GitHub
+
 ```bash
-# Clone repository
 pip install git+https://github.com/Morteza-Khazaei/inversion.git
+```
+
+### For Development
+
+If you want to contribute or modify the package:
+
+```bash
+git clone https://github.com/Morteza-Khazaei/inversion.git
 cd inversion
-
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate
-
-# Install dependencies in normal mode
-pip install .
-
-# Install dependencies in development mode
 pip install -e .
 ```
 
