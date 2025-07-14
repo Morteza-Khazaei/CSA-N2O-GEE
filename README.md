@@ -106,3 +106,45 @@ Each component has its own README with detailed instructions:
 - BBCH Scale Documentation
 - Sentinel-1 Technical Guide
 - RISMA Network Documentation
+
+## Assets and Configuration
+
+The `assets` folder is a critical component of this project, containing all necessary configuration files and data:
+
+### Configuration Files
+
+#### GDD Configuration (`config/gdd/`)
+- `crop_base_temp.json`: Defines base temperatures for GDD calculation by crop type
+  ```json
+  {
+    "wheat": 0,
+    "canola": 5,
+    "corn": 10
+  }
+  ```
+- `crop_bbch_k_b_coff.json`: Contains coefficients for converting GDD to BBCH stages
+- `crop_gdd_thresh.json`: Specifies GDD thresholds for different growth stages
+
+#### Inversion Parameters (`config/inversion/`)
+- `crop_inversion_bounds.json`: Defines parameter bounds for RT model inversion:
+  - Soil moisture ranges (SSM)
+  - Roughness parameter limits (s, l)
+  - Vegetation parameter constraints (c, d, w)
+
+### Important Notes
+- These configuration files must be properly set up before running any calculations
+- Parameters are crop-specific and should be adjusted based on your study area
+- Modifying these files will directly impact:
+  - Phenology calculations
+  - RT model inversion results
+  - Final soil parameter estimates
+
+### File Structure Importance
+```
+assets/
+├── config/           # Configuration root
+│   ├── gdd/         # Growth stage parameters
+│   └── inversion/   # RT model parameters
+├── inputs/          # Raw data storage
+└── outputs/         # Processing results
+```
