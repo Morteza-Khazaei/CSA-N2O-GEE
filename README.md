@@ -10,6 +10,8 @@ The workflow consists of four main components:
 3. Soil parameter inversion using radiative transfer models
 4. Ensemble Random Forest modeling and GEE deployment
 
+![Alt text](figures/CSA_main_flowchart.png "CSA Main Flowchart")
+
 ## Project Structure
 
 ### 1. Data Download (`download/`)
