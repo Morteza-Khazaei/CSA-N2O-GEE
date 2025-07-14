@@ -9,15 +9,6 @@ The system calculates:
 - Corresponding BBCH growth stages
 - Cumulative Soil Moisture (SSM)
 
-## Requirements
-
-- Python 3.7+
-- Required packages:
-  - pandas
-  - numpy
-  - matplotlib
-  - seaborn
-
 ## Usage
 
 1. Place your input data in the `assets` directory

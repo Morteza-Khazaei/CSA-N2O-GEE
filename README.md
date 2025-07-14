@@ -33,7 +33,7 @@ Performs radiative transfer model inversion to estimate:
 - Roughness parameters (s, l)
 - Vegetation parameters (c, d, w)
 
-### 4. Ensemble Modeling (`estimation/`)
+### 4. Ensemble Modeling (`modeling/`)
 
 Trains and deploys Random Forest models:
 - Multiple parameter estimation
@@ -97,7 +97,7 @@ Each component has its own README with detailed instructions:
 - [Data Download Guide](download/README.md)
 - [Phenology Calculation Guide](phenology/README.md)
 - [Inversion Guide](inversion/README.md)
-- [Estimation Guide](estimation/README.md)
+- [Estimation Guide](modeling/README.md)
 
 ## References
 
