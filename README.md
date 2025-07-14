@@ -81,7 +81,7 @@ assets/
 ## Usage
 
 Each component has its own README with detailed instructions:
-- [Data Download Guide](data/README.md)
+- [Data Download Guide](download/README.md)
 - [Phenology Calculation Guide](phenology/README.md)
 - [Inversion Guide](inversion/README.md)
 - [Estimation Guide](estimation/README.md)
