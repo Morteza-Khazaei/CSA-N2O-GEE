@@ -1,76 +1,93 @@
-# Growing Degree Days (GDD) and BBCH Calculator
+# Soil Moisture and Roughness Estimation using Sentinel-1
 
-This repository contains tools for calculating cumulative Growing Degree Days (GDD) and converting them to BBCH (Biologische Bundesanstalt, Bundessortenamt und Chemische Industrie) growth stages for crop phenology monitoring.
+This repository contains the complete workflow for estimating soil surface parameters—specifically soil moisture and roughness—from Sentinel-1 radar backscatter using radiative transfer models and machine learning.
 
-## Overview
+## Project Overview
 
-The system calculates:
-- Daily and cumulative Growing Degree Days (GDD)
-- Corresponding BBCH growth stages
-- Cumulative Soil Moisture (SSM)
+The workflow consists of four main components:
+1. Data acquisition from RISMA stations and Sentinel-1
+2. Phenology calculation using BBCH scale
+3. Soil parameter inversion using radiative transfer models
+4. Ensemble Random Forest modeling and GEE deployment
 
-## Requirements
+## Project Structure
 
+### 1. Data Download (`download/`)
+
+Downloads and processes required datasets:
+- RISMA station data (soil moisture, temperature)
+- Sentinel-1 SAR data (VV/VH backscatter)
+
+### 2. Phenology Calculation (`phenology/`)
+
+Calculates crop growth stages using:
+- Growing Degree Days (GDD)
+- BBCH scale conversion
+- Temporal progression modeling
+
+### 3. Parameter Inversion (`inversion/`)
+
+Performs radiative transfer model inversion to estimate:
+- Surface Soil Moisture (SSM)
+- Surface Soil Temperature (SST)
+- Roughness parameters (s, l)
+- Vegetation parameters (c, d, w)
+
+### 4. Ensemble Modeling (`estimation/`)
+
+Trains and deploys Random Forest models:
+- Multiple parameter estimation
+- Model performance evaluation
+- GEE model deployment
+
+## Setup and Installation
+
+### Prerequisites
 - Python 3.7+
-- Required packages:
-  - pandas
-  - numpy
-  - matplotlib
-  - seaborn
+- Google Earth Engine account
+- Git
+
+### Installation
+
+```bash
+# Clone repository
+pip install git+https://github.com/Morteza-Khazaei/inversion.git
+cd inversion
+
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate
+
+# Install dependencies in normal mode
+pip install .
+
+# Install dependencies in development mode
+pip install -e .
+```
+
+## Data Structure
+
+```
+assets/
+├── inputs/
+│   ├── RISMA_CSV_files/
+│   └── Sentinel1_CSV_files/
+└── outputs/
+    ├── bbch_df.csv
+    ├── inv_df.csv
+    └── rf_models/
+```
 
 ## Usage
 
-1. Place your input data in the `assets` directory
-2. Run the BBCH calculation:
-
-```python
-from phenology.inversion import BBCH
-
-# Initialize BBCH calculator
-pheno = BBCH(workspace_dir='assets')
-
-# Run calculations
-df = pheno.run()
-
-# Save results
-df.to_csv('assets/outputs/bbch_df.csv', index=False)
-```
-
-## Data Visualization
-
-The package includes functions to visualize:
-- GDD accumulation over time
-- BBCH stages throughout the growing season
-- Relationship between cumulative SSM and GDD
-
-Example visualization code:
-
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Plot BBCH vs Day of Year
-plt.figure(figsize=(10, 6))
-sns.lineplot(x='doy', y='BBCH', data=df, hue='year')
-plt.xlabel('Day of Year (DOY)')
-plt.ylabel('BBCH Stage')
-plt.title('Crop Development Stages Through Growing Season')
-plt.show()
-```
-
-## Output Format
-
-The generated CSV file contains the following columns:
-- doy: Day of Year
-- year: Growing season year
-- cum_GDD: Cumulative Growing Degree Days
-- cum_SSM: Cumulative Soil Surface Moisture
-- BBCH: Calculated BBCH growth stage
+Each component has its own README with detailed instructions:
+- [Data Download Guide](data/README.md)
+- [Phenology Calculation Guide](phenology/README.md)
+- [Inversion Guide](inversion/README.md)
+- [Estimation Guide](estimation/README.md)
 
 ## References
 
-BBCH growth stages are based on the uniform BBCH scale, a system for coding phenologically similar growth stages of plants.
-
-For more information, see:
-- [BBCH Scale Documentation](https://en.wikipedia.org/wiki/BBCH-scale)
-- [Growing Degree Days Calculator](https://www.canr.msu.edu/uploads/resources/pdfs/growing_degree_days_calculation_(e2959).pdf)
+- BBCH Scale Documentation
+- Sentinel-1 Technical Guide
+- RISMA Network Documentation
