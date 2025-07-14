@@ -64,4 +64,4 @@ BBCH growth stages are based on the uniform BBCH scale, a system for coding phen
 
 For more information, see:
 - [BBCH Scale Documentation](https://en.wikipedia.org/wiki/BBCH-scale)
-- [Growing Degree Days Calculator](https://www.canr.msu.edu/uploads/resources/pdfs/growing_degree_days_calculation_(e2959).pdf)
+- [Growing Degree Days Calculator](http://nmsp.cals.cornell.edu/publications/factsheets/factsheet112.pdf)
