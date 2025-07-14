@@ -69,13 +69,26 @@ pip install -e .
 
 ```
 assets/
+├── config/
+│   ├── gdd/
+│   │   ├── crop_base_temp.json        # Base temperature for GDD calculation
+│   │   ├── crop_bbch_k_b_coff.json    # BBCH conversion coefficients
+│   │   └── crop_gdd_thresh.json       # GDD thresholds for growth stages
+│   └── inversion/
+│       └── crop_inversion_bounds.json  # Parameter bounds for RT models
 ├── inputs/
 │   ├── RISMA_CSV_files/
+│   │   ├── RISMA_MB1_2010_to_2024.csv
+│   │   ├── RISMA_MB2_2010_to_2024.csv
+│   │   └── ...
 │   └── Sentinel1_CSV_files/
+│       └── ...
 └── outputs/
-    ├── bbch_df.csv
-    ├── inv_df.csv
-    └── rf_models/
+    ├── bbch_df.csv                     # Phenology results
+    ├── inv_df.csv                      # Inversion results
+    ├── ensemble_trees_s_n15_md15.csv   # RF model for roughness
+    ├── ensemble_trees_SSM_n15_md15.csv # RF model for soil moisture
+    └── ensemble_trees_vvs_n15_md15.csv # RF model for backscatter
 ```
 
 ## Usage
